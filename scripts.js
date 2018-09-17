@@ -52,8 +52,11 @@ window.onload = function () {
   renderLyrics();
 }
 
-
 //Click Listener
 const userClick = () => {
-  console.log('click');
+  store.dispatch({ type: 'NEXT_LYRIC' });
+  console.log(store.getState());
 }
+
+//Subscribe to redux store
+store.subscribe(renderLyrics);
